@@ -1,0 +1,85 @@
+[   11s] training rows ready
+reproduction (old bench): one-game added equals all5 on all 6 runs (largest difference 0.0e+00), reference 0.6685
+[   28s] reproduction passed
+[   48s] dead ball classifiers trained
+[   59s] 1/27 Sample_Game_2 seed 0 (11s)
+[   60s] 2/27 Sample_Game_1 seed 0 (12s)
+[   60s] 3/27 Sample_Game_1 seed 1 (12s)
+[   60s] 4/27 Sample_Game_1 seed 2 (12s)
+[   69s] 5/27 J03WMX seed 0 (10s)
+[   69s] 6/27 J03WMX seed 1 (10s)
+[   70s] 7/27 Sample_Game_2 seed 1 (11s)
+[   71s] 8/27 Sample_Game_2 seed 2 (12s)
+[   79s] 9/27 J03WN1 seed 0 (10s)
+[   79s] 10/27 J03WMX seed 2 (10s)
+[   80s] 11/27 J03WN1 seed 1 (10s)
+[   81s] 12/27 J03WN1 seed 2 (10s)
+[   89s] 13/27 J03WOH seed 0 (10s)
+[   89s] 14/27 J03WOH seed 1 (9s)
+[   89s] 15/27 J03WOH seed 2 (9s)
+[   90s] 16/27 J03WOY seed 0 (9s)
+[   99s] 17/27 J03WOY seed 1 (11s)
+[   99s] 18/27 J03WOY seed 2 (11s)
+[  100s] 19/27 J03WPY seed 0 (11s)
+[  101s] 20/27 J03WPY seed 1 (11s)
+[  110s] 21/27 J03WQQ seed 0 (11s)
+[  111s] 22/27 J03WPY seed 2 (11s)
+[  111s] 23/27 J03WQQ seed 1 (11s)
+[  112s] 24/27 J03WQQ seed 2 (11s)
+[  121s] 25/27 J03WR9 seed 0 (10s)
+[  121s] 26/27 J03WR9 seed 1 (10s)
+[  121s] 27/27 J03WR9 seed 2 (10s)
+reference metrica  0.615296  (6 runs, expected 0.6153)
+reference 1.5      0.513982  (21 runs, expected 0.514)
+reference 2.5      0.562388  (21 runs, expected 0.5624)
+
+Gain over the reference (spell_f1), weight 0.25 for added
+  bench                cand   runs      ref     mean  up down      min    macro    trans  ref_spl  new_spl  verdict
+  DFL 1.5              added    21   0.5140  +0.0504  21    0  +0.0259  +0.0137  +0.0389    225.2    240.4  PASS
+  DFL 1.5              vote     21   0.5140  +0.0023  15    6  -0.0093  +0.0047  +0.0026    225.2    211.6  FAIL 6 of 21 gains not above 0; mean gain +0.0023 below +0.005
+                       vote flips 9.1% of spells, classifier log loss 0.2803, AUC 0.9513 (against this row's labels)
+  DFL 2.5              added    21   0.5624  +0.0432  21    0  +0.0060  +0.0143  +0.0371    225.2    240.4  PASS
+  DFL 2.5              vote     21   0.5624  +0.0131  20    1  -0.0067  +0.0063  +0.0068    225.2    211.6  FAIL 1 of 21 gains not above 0
+                       vote flips 9.1% of spells, classifier log loss 0.2837, AUC 0.9504 (against this row's labels)
+  Metrica              added     6   0.6153  +0.0297   6    0  +0.0083  +0.0081  +0.0236    234.7    242.5  PASS
+  Metrica              vote      6   0.6153  +0.0089   5    1  -0.0056  +0.0056  +0.0052    234.7    217.7  FAIL 1 of 6 gains not above 0
+                       vote flips 9.8% of spells, classifier log loss 0.2665, AUC 0.9562 (against this row's labels)
+  Metrica, one game    added     6   0.6153  +0.0274   6    0  +0.0052  +0.0079  +0.0222    234.7    240.5  reported only
+  Metrica, one game    vote      6   0.6153  +0.0087   5    1  -0.0039  +0.0052  +0.0045    234.7    218.3  reported only
+                       vote flips 9.5% of spells, classifier log loss 0.2789, AUC 0.9529 (against this row's labels)
+  Metrica, control off added     6   0.5321  +0.0276   6    0  +0.0080  +0.0078  +0.0241    234.7    242.5  reported only
+  Metrica, control off vote      6   0.5321  +0.0025   4    2  -0.0090  +0.0049  -0.0005    234.7    217.7  reported only
+                       vote flips 9.8% of spells, classifier log loss 0.2727, AUC 0.9541 (against this row's labels)
+
+Passed all three: added True, vote False; lowest gain over the 48 runs: added +0.0060, vote -0.0093; kept: added
+
+Gain per run
+  J03WMX         seed 0  1.5 ref 0.4968 added +0.0597 vote +0.0005  2.5 ref 0.5562 added +0.0690 vote +0.0135
+  J03WMX         seed 1  1.5 ref 0.4928 added +0.0491 vote +0.0153  2.5 ref 0.5467 added +0.0452 vote +0.0232
+  J03WMX         seed 2  1.5 ref 0.5311 added +0.0268 vote -0.0001  2.5 ref 0.5798 added +0.0213 vote +0.0281
+  J03WN1         seed 0  1.5 ref 0.4340 added +0.0819 vote -0.0093  2.5 ref 0.4774 added +0.0851 vote +0.0214
+  J03WN1         seed 1  1.5 ref 0.5113 added +0.0371 vote +0.0036  2.5 ref 0.5281 added +0.0345 vote +0.0216
+  J03WN1         seed 2  1.5 ref 0.4440 added +0.0706 vote +0.0044  2.5 ref 0.4764 added +0.0714 vote +0.0196
+  J03WOH         seed 0  1.5 ref 0.5207 added +0.0333 vote +0.0019  2.5 ref 0.5591 added +0.0430 vote +0.0090
+  J03WOH         seed 1  1.5 ref 0.5519 added +0.0357 vote +0.0063  2.5 ref 0.6088 added +0.0298 vote +0.0099
+  J03WOH         seed 2  1.5 ref 0.5214 added +0.0364 vote +0.0114  2.5 ref 0.5619 added +0.0411 vote +0.0160
+  J03WOY         seed 0  1.5 ref 0.5172 added +0.1016 vote +0.0050  2.5 ref 0.5898 added +0.0421 vote +0.0065
+  J03WOY         seed 1  1.5 ref 0.4899 added +0.0640 vote +0.0055  2.5 ref 0.5536 added +0.0522 vote +0.0142
+  J03WOY         seed 2  1.5 ref 0.5029 added +0.0330 vote +0.0004  2.5 ref 0.5706 added +0.0214 vote +0.0013
+  J03WPY         seed 0  1.5 ref 0.5612 added +0.0466 vote +0.0032  2.5 ref 0.6034 added +0.0560 vote +0.0086
+  J03WPY         seed 1  1.5 ref 0.5383 added +0.0994 vote +0.0015  2.5 ref 0.5767 added +0.0724 vote +0.0138
+  J03WPY         seed 2  1.5 ref 0.5853 added +0.0509 vote -0.0007  2.5 ref 0.6343 added +0.0642 vote +0.0119
+  J03WQQ         seed 0  1.5 ref 0.4980 added +0.0291 vote +0.0034  2.5 ref 0.5725 added +0.0060 vote +0.0162
+  J03WQQ         seed 1  1.5 ref 0.5058 added +0.0294 vote +0.0030  2.5 ref 0.5497 added +0.0116 vote +0.0064
+  J03WQQ         seed 2  1.5 ref 0.5262 added +0.0698 vote -0.0072  2.5 ref 0.5670 added +0.0401 vote -0.0067
+  J03WR9         seed 0  1.5 ref 0.5289 added +0.0449 vote +0.0049  2.5 ref 0.5753 added +0.0363 vote +0.0180
+  J03WR9         seed 1  1.5 ref 0.5190 added +0.0259 vote -0.0008  2.5 ref 0.5666 added +0.0347 vote +0.0111
+  J03WR9         seed 2  1.5 ref 0.5169 added +0.0332 vote -0.0030  2.5 ref 0.5561 added +0.0301 vote +0.0109
+  Sample_Game_1  seed 0  metrica ref 0.5815 added +0.0083 vote -0.0056  metrica_one_game ref 0.5815 added +0.0052 vote +0.0017  metrica_control_off ref 0.5118 added +0.0080 vote -0.0076
+  Sample_Game_1  seed 1  metrica ref 0.5996 added +0.0389 vote +0.0184  metrica_one_game ref 0.5996 added +0.0280 vote +0.0140  metrica_control_off ref 0.5189 added +0.0330 vote +0.0140
+  Sample_Game_1  seed 2  metrica ref 0.6336 added +0.0345 vote +0.0048  metrica_one_game ref 0.6336 added +0.0402 vote +0.0065  metrica_control_off ref 0.5563 added +0.0299 vote +0.0015
+  Sample_Game_2  seed 0  metrica ref 0.5961 added +0.0395 vote +0.0180  metrica_one_game ref 0.5961 added +0.0350 vote +0.0194  metrica_control_off ref 0.5129 added +0.0324 vote +0.0102
+  Sample_Game_2  seed 1  metrica ref 0.6488 added +0.0285 vote +0.0002  metrica_one_game ref 0.6488 added +0.0245 vote -0.0039  metrica_control_off ref 0.5542 added +0.0303 vote -0.0090
+  Sample_Game_2  seed 2  metrica ref 0.6321 added +0.0283 vote +0.0174  metrica_one_game ref 0.6321 added +0.0316 vote +0.0144  metrica_control_off ref 0.5384 added +0.0317 vote +0.0058
+
+wall time 121s

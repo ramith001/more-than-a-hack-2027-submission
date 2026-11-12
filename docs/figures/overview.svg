@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 340" width="960" height="340" font-family="Helvetica, Arial, sans-serif">
+  <rect width="960" height="340" fill="#ffffff"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#555"/>
+    </marker>
+  </defs>
+  <g font-size="13" fill="#1a1a1a">
+    <text x="20" y="28" font-size="12" fill="#666" letter-spacing="1">INPUTS</text>
+    <text x="270" y="28" font-size="12" fill="#666" letter-spacing="1">1. PER-FRAME EVIDENCE</text>
+    <text x="640" y="28" font-size="12" fill="#666" letter-spacing="1">2. SEGMENTATION</text>
+    <text x="830" y="28" font-size="12" fill="#666" letter-spacing="1">OUTPUT</text>
+
+    <rect x="20" y="50" width="190" height="90" rx="8" fill="#eef3fb" stroke="#4a6fa5"/>
+    <text x="115" y="82" text-anchor="middle" font-weight="bold">Tracking</text>
+    <text x="115" y="102" text-anchor="middle">ball and 22 players</text>
+    <text x="115" y="120" text-anchor="middle">25 frames per second</text>
+
+    <rect x="20" y="190" width="190" height="90" rx="8" fill="#eef3fb" stroke="#4a6fa5"/>
+    <text x="115" y="222" text-anchor="middle" font-weight="bold">Smart Tagging</text>
+    <text x="115" y="242" text-anchor="middle">set pieces and the</text>
+    <text x="115" y="260" text-anchor="middle">team taking them</text>
+
+    <rect x="270" y="46" width="300" height="72" rx="8" fill="#f4f4f4" stroke="#888"/>
+    <text x="285" y="68" font-weight="bold">Who has the ball</text>
+    <text x="285" y="88">proximity, touches, learned team probability</text>
+    <text x="285" y="106" fill="#555">gives a score for H and for A</text>
+
+    <rect x="270" y="134" width="300" height="72" rx="8" fill="#f4f4f4" stroke="#888"/>
+    <text x="285" y="156" font-weight="bold">Is the ball dead</text>
+    <text x="285" y="176">two learned classifiers (ball seen or not)</text>
+    <text x="285" y="194" fill="#555">gives a score for D</text>
+
+    <rect x="270" y="222" width="300" height="72" rx="8" fill="#f4f4f4" stroke="#888"/>
+    <text x="285" y="244" font-weight="bold">Restarts</text>
+    <text x="285" y="264">first fast ball after a tagged set piece</text>
+    <text x="285" y="282" fill="#555">the team taking it has the ball</text>
+
+    <rect x="640" y="70" width="160" height="200" rx="8" fill="#fdf3e4" stroke="#c28a2c"/>
+    <text x="720" y="100" text-anchor="middle" font-weight="bold">Viterbi</text>
+    <text x="720" y="124" text-anchor="middle">best H / A / D</text>
+    <text x="720" y="142" text-anchor="middle">sequence per half</text>
+    <text x="720" y="172" text-anchor="middle" fill="#555">cost for every switch,</text>
+    <text x="720" y="190" text-anchor="middle" fill="#555">cheap at a touch</text>
+    <text x="720" y="220" text-anchor="middle" fill="#555">stoppage at least 3 s,</text>
+    <text x="720" y="238" text-anchor="middle" fill="#555">spell at least 2 s</text>
+
+    <rect x="830" y="110" width="110" height="120" rx="8" fill="#eaf5ec" stroke="#4d8b57"/>
+    <text x="885" y="146" text-anchor="middle" font-weight="bold">One label</text>
+    <text x="885" y="166" text-anchor="middle">per frame</text>
+    <text x="885" y="192" text-anchor="middle" font-weight="bold">H  A  D  X</text>
+    <text x="885" y="214" text-anchor="middle" fill="#555">199,319 rows</text>
+  </g>
+  <g stroke="#555" stroke-width="1.5" fill="none" marker-end="url(#a)">
+    <path d="M210 95 L268 82"/>
+    <path d="M210 95 L268 170"/>
+    <path d="M210 235 L268 258"/>
+    <path d="M210 235 L268 190" opacity="0.0"/>
+    <path d="M570 82 L638 130"/>
+    <path d="M570 170 L638 170"/>
+    <path d="M570 258 L638 210"/>
+    <path d="M800 170 L828 170"/>
+  </g>
+</svg>

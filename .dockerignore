@@ -1,0 +1,9 @@
+.git
+.venv
+venv
+data/
+evaluation/results/*.csv
+!evaluation/results/baseline_*.csv
+evaluation/reports
+__pycache__
+*.pyc

@@ -1,0 +1,20 @@
+# Full pinned set for `possession/run.py` and `possession/validate.py`.
+# Tested with Python 3.13 (3.13.18 venv). These versions produced the baseline submission.
+#
+# requirements.txt stays the scorer's two lines. Nothing here is needed to score a file.
+
+# numpy, pandas: array and table core for the whole pipeline.
+numpy==2.2.5
+pandas==2.3.0
+# pandas dependencies.
+python-dateutil==3.0.0
+pytz==2026.6
+tzdata==2026.6
+six==1.17.0
+# scipy: model, deadball and external.
+scipy==1.16.1
+# scikit-learn: dead ball classifier.
+scikit-learn==1.7.1
+joblib==1.6.0
+cloudpickle==3.1.2
+threadpoolctl==3.7.0
